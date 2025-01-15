@@ -3,9 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Catalogue - Pixel Mart</title>
+    <link rel="stylesheet" href="style/styleCatalog.css">
 </head>
 <body>
-    
+    <header>
+        <div class="logo-container">
+            <p>Pixel Mart</p>
+        </div>
+        <nav>
+            <ul>
+                <li><button id="accueil">Acceuil</button></li>
+                <li><button id="listProduct">Liste Produit</button></li>
+                <li><button id="cart">Panier</button></li>
+                <li><button id="login">Login</button></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <main>
+        <h1>Bienvenue dans notre Catalogue !</h1>
+
+        <div class="filter-container">
+            <h2>Filtrer par catégorie</h2>
+            <button id="consolBtn">Console</button>
+            <button id="pcBtn">PC</button>
+            <button id="phoneBtn">Téléphones</button>
+            <button id="accessoryBtn">Accessoires</button>
+            <button id="allBtn">Tous les produits</button>
+        </div>
+
+        <div class="product-catalog" id="consolCatalog">
+            <h2 class="title-catalog">Catalogue Console</h2>
+            <div class="product-item">
+                <img src="/picture/ps5Product.jpg" alt="ps5">
+                <p>PS5 - 950€</p>
+            </div>
+            <div class="product-item">
+                <img src="/picture/xboxProduct.jpg" alt="xbox série X">
+                <p>xbox série X - 800€</p>
+            </div>
+            <div class="product-item">
+                <img src="/picture/switch.jpg" alt="switch">
+                <p>Switch - 1200€</p>
+            </div>
+        </div>
+
+        <div class="product-catalog" id="pcCatalog" style="display: none;">
+            <h2 class="title-catalog">Catalogue PC</h2>
+            <div class="product-item">
+                <img src="/picture/pcGaming.jpg" alt="PC Gaming">
+                <p>PC Gaming - 1000€</p>
+            </div>
+            <div class="product-item">
+                <img src="/picture/pcPortable.jpg" alt="PC Portable">
+                <p>PC Portable - 800€</p>
+            </div>
+            <div class="product-item">
+                <img src="/picture/pcBureau.jpg" alt="PC de bureau">
+                <p>PC de bureau - 1200€</p>
+            </div>
+        </div>
+
+        <div class="product-catalog" id="phoneCatalog" style="display: none;">
+            <h2 class="title-catalog">Catalogue Téléphones</h2>
+            <div class="product-item">
+                <img src="/picture/iphone16.webp" alt="iPhone 16">
+                <p>iPhone 14 - 999€</p>
+            </div>
+            <div class="product-item">
+                <img src="/picture/samsungGalaxyS23.jpg" alt="Samsung Galaxy S23">
+                <p>Samsung Galaxy S23 - 899€</p>
+            </div>
+            <div class="product-item">
+                <img src="/picture/onePlus11.jpg" alt="OnePlus 11">
+                <p>OnePlus 11 - 799€</p>
+            </div>
+        </div>
+
+        <div class="product-catalog" id="accessoryCatalog" style="display: none;">
+            <h2 class="title-catalog">Catalogue Accessoires</h2>
+            <div class="product-item">
+                <img src="/picture/casqueBluethoot.jpg" alt="Casque Bluetooth">
+                <p>Casque Bluetooth - 50€</p>
+            </div>
+            <div class="product-item">
+                <img src="/picture/chargeurSansFil.jpg" alt="Chargeur sans fil">
+                <p>Chargeur sans fil - 25€</p>
+            </div>
+            <div class="product-item">
+                <img src="/picture/clavier.jpg" alt="Clavier mécanique">
+                <p>Clavier mécanique - 80€</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="/script/scriptCatalog.js"></script>
 </body>
 </html>

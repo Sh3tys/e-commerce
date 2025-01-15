@@ -1,22 +1,42 @@
-const catalog = document.getElementById('catalog');
-const listProduct = document.getElementById('listProduct');
-const cart = document.getElementById('cart');
-const login = document.getElementById('login');
+document.addEventListener("DOMContentLoaded", () => {
+  const catalog = document.getElementById("catalog");
+  const listProduct = document.getElementById("listProduct");
+  const cart = document.getElementById("cart");
+  const login = document.getElementById("login");
 
+  catalog.addEventListener("click", function () {
+    window.location.href = "catalog.html";
+  });
 
+  listProduct.addEventListener("click", function () {
+    window.location.href = "listProduct.html";
+  });
 
-catalog.addEventListener('click', function(){
-    window.location.href = 'catalog.html';
-});
+  cart.addEventListener("click", function () {
+    window.location.href = "cart.html";
+  });
 
-listProduct.addEventListener('click', function(){
-    window.location.href = 'listProduct.html';
-});
+  login.addEventListener("click", function () {
+    window.location.href = "login.html";
+  });
 
-cart.addEventListener('click', function(){
-    window.location.href = 'cart.html';
-});
+  const teasing = document.getElementById("pictureTeasing");
+  const promos = document.querySelectorAll(".promo-item");
+  const category = document.querySelectorAll('.category');
 
-login.addEventListener('click', function(){
-    window.location.href = 'login.html';
+  if (teasing) {
+    teasing.addEventListener("click", function () {
+      window.location.href = "catalog.html";
+    });
+  }
+  if (promos) {
+    promos.forEach((element) => {
+        element.onclick = () => window.location.href = "catalog.html";
+    });
+  }
+  if (category) {
+    category.forEach((element) => {
+        element.onclick = () => window.location.href = "catalog.html";
+    });
+  }
 });
