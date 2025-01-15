@@ -3,9 +3,11 @@
 body {
     margin: 0;
     padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
 }
 
-/* ============== Header ============================ */
+/* Header */
 header {
     display: flex;
     align-items: center;
@@ -19,13 +21,13 @@ header nav {
 }
 
 .logo-container {
+    color: white;
     display: flex;
     align-items: center;
     font-family: 'Jersey 10', sans-serif;
     font-weight: bold;
     font-size: 50px;
-    margin: 0px 50px 0px;
-    padding: 0px;
+    margin: 0 50px;
     max-height: 100px;
 }
 
@@ -56,4 +58,122 @@ header nav ul li button {
 
 header nav ul li button:hover {
     background-color: #1A053E; 
+}
+
+/* Account Section */
+.account-container {
+    max-width: 400px;
+    margin: 50px auto;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+}
+
+/* Title */
+.title {
+    background-color: #e0e0e0;
+    font-size: 40px;
+    font-weight: bold;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tab {
+    flex: 1;
+    padding: 10px;
+    font-size: 25px;
+    font-weight: bold;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.tab.active {
+    background-color: #007bff;
+    border: 1px solid #bbb;
+    color: #fff;
+}
+
+.tab:hover {
+    background-color: #7abfff;
+}
+
+/* Content */
+.content {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    font-size: 14px;
+    display: none;
+}
+
+.content:not(.hidden) {
+    display: block;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 0 auto;
+    width: 90%;
+}
+
+form input {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+form input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+form button {
+    padding: 10px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+form button:active {
+    background-color: #004494;
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+    .account-container {
+        width: 95%;
+        margin: 20px auto;
+    }
+
+    form input, form button {
+        width: 100%;
+    }
 }

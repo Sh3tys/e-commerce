@@ -16,12 +16,43 @@
         <nav>
             <ul>
                 <li><button id="accueil">Accueil</button></li>
+                <li><button id="catalog">Catalogue</button></li>
                 <li><button id="listProduct">Liste Produit</button></li>
                 <li><button id="cart">Panier</button></li>
-                <li><button id="login">Login</button></li>
             </ul>
         </nav>
     </header>
+
+    <main>
+        <div class="account-container">
+            <div class="title">Mon compte</div>
+            <div class="tabs">
+                <button id="login-tab" class="tab active">Login</button>
+                <button id="register-tab" class="tab">Registre</button>
+            </div>
+            <div id="login-content" class="content">
+                <form id="loginForm">
+                    <input type="text" id="emailLogin" placeholder="Email">
+                    <input type="password" id="passwordLogin" placeholder="Mot de passe">
+                    <button type="submitConnect">Se connecter</button>
+                </form>
+            </div>
+            <div id="register-content" class="content hidden">
+                <form id="registerForm">
+                    <input type="text" id="firstNameRegister" placeholder="Prénom">
+                    <input type="text" id="lastNameRegister" placeholder="Nom">
+                    <input type="text" id="ageRegister" placeholder="age">
+                    <input type="text" id="adresseRegister" placeholder="Adresse">
+                    <input type="text" id="telRegister" placeholder="Telephone">
+                    <input type="text" id="emailRegister" placeholder="Email">
+                    <input type="password" id="passwordRegister" placeholder="Mot de passe">
+                    
+                    <button type="submit">S'inscrire</button>
+                </form>
+                
+            </div>
+        </div>
+    </main>
 
 
 
