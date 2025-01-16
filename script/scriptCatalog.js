@@ -83,4 +83,5 @@ document.addEventListener('DOMContentLoaded', () => {
         phoneCatalog.style.display = 'block';
         accessoryCatalog.style.display = 'block';
     });
+
 });

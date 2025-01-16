@@ -62,6 +62,17 @@ header nav ul li button:hover {
     background-color: #1A053E; 
 }
 
+.menu-toggle {
+    display: none;
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+}
+
+/* ===============================MAIN=====================*/
 main {
     padding: 20px;
 }
@@ -200,4 +211,31 @@ footer {
 
 .footer-bottom a:hover {
     color: white;
+}
+
+@media (max-width: 807px) {
+    header nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #3498DB;
+        width: 100%;
+        padding: 20px 0;
+        z-index: 10;
+    }
+
+    header nav ul.active {
+        display: flex;
+    }
+
+    header nav ul li {
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
 }

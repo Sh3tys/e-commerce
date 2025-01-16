@@ -61,6 +61,16 @@ header nav ul li button:hover {
     transform: scale(1.05);
     background-color: #1A053E; 
 }
+
+.menu-toggle {
+    display: none;
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+}
 /* ===========================Main up=================================*/
 .product-container {
     display: flex;
@@ -261,5 +271,32 @@ footer {
     .cta-buttons button {
         width: 100%;
         margin: 10px 0;
+    }
+}
+
+@media (max-width: 807px) {
+    header nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #3498DB;
+        width: 100%;
+        padding: 20px 0;
+        z-index: 10;
+    }
+
+    header nav ul.active {
+        display: flex;
+    }
+
+    header nav ul li {
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .menu-toggle {
+        display: block;
     }
 }
