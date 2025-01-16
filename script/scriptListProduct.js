@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const cart = document.getElementById('cart');
     const login = document.getElementById('login');
     const addToCartButtons = document.querySelectorAll('.add-to-cart');
+    const detail = document.querySelectorAll('detail');
 
     // Navigation entre les pages
     if (accueil) {
@@ -29,6 +30,12 @@ document.addEventListener('DOMContentLoaded', () => {
             window.location.href = 'cart.html';
         });
     }
+
+    if (detail) {
+        detail.forEach((element) => {
+            element.onclick = () => window.location.href = "listProduct.html";
+        });
+      }
 
     // Ajout des produits au panier
     addToCartButtons.forEach((button) => {
