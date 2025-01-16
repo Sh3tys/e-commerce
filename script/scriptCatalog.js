@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const listProduct = document.getElementById('listProduct');
     const cart = document.getElementById('cart');
     const login = document.getElementById('login');
+    const list = document.getElementById('goList');
 
     if (accueil) {
         accueil.addEventListener('click', () => {
@@ -25,6 +26,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (cart) {
         cart.addEventListener('click', () => {
             window.location.href = 'cart.html';
+        });
+    }
+
+    if (list) {
+        list.addEventListener('click', () => {
+            window.location.href = 'listProduct.html';
         });
     }
 

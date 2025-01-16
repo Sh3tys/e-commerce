@@ -107,3 +107,21 @@ header nav ul li button:hover {
     width: 80%;
     height: auto;
 }
+
+#btn-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#btn-list button {
+    color: white;
+    background-color: green;
+    padding: 18px;
+    border: olive;
+    font-weight: bold;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    cursor: pointer;
+}

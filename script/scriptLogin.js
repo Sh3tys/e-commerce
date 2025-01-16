@@ -1,35 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Navigation entre les pages
     const accueil = document.getElementById('accueil');
     const catalog = document.getElementById('catalog');
     const listProduct = document.getElementById('listProduct');
     const cart = document.getElementById('cart');
-
-    if (accueil) {
-        accueil.addEventListener('click', () => {
-            window.location.href = 'index.html';
-        });
-    }
-
-    if (catalog) {
-        catalog.addEventListener('click', () => {
-            window.location.href = 'catalog.html';
-        });
-    }
-
-    if (listProduct) {
-        listProduct.addEventListener('click', () => {
-            window.location.href = 'listProduct.html';
-        });
-    }
-
-    if (cart) {
-        cart.addEventListener('click', () => {
-            window.location.href = 'cart.html';
-        });
-    }
-
-    // Gestion des onglets (Login/Register)
     const loginTab = document.getElementById('login-tab');
     const registerTab = document.getElementById('register-tab');
     const loginContent = document.getElementById('login-content');
@@ -46,10 +19,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const emailRegister = document.getElementById('emailRegister');
     const passwordRegister = document.getElementById('passwordRegister');
 
-    // Récupération ou initialisation des comptes utilisateurs depuis localStorage
-    let accounts = JSON.parse(localStorage.getItem('accounts')) || [];
 
-    // Gestion des onglets
+    if (accueil) accueil.addEventListener('click', () => window.location.href = 'index.html');
+    if (catalog) catalog.addEventListener('click', () => window.location.href = 'catalog.html');
+    if (listProduct) listProduct.addEventListener('click', () => window.location.href = 'listProduct.html');
+    if (cart) cart.addEventListener('click', () => window.location.href = 'cart.html');
+
+ 
+    let accounts = JSON.parse(localStorage.getItem('accounts')) || [];
+    let currentUser = JSON.parse(localStorage.getItem('currentUser'));
+
+
     loginTab.addEventListener('click', () => {
         loginTab.classList.add('active');
         registerTab.classList.remove('active');
@@ -64,10 +44,10 @@ document.addEventListener('DOMContentLoaded', () => {
         loginContent.classList.add('hidden');
     });
 
-    // Gérer l'inscription
+    // Inscription
     if (submit) {
         submit.addEventListener('click', (event) => {
-            event.preventDefault(); // Empêcher le formulaire de se soumettre automatiquement
+            event.preventDefault();
 
             const firstName = firstNameRegister.value.trim();
             const lastName = lastNameRegister.value.trim();
@@ -77,57 +57,47 @@ document.addEventListener('DOMContentLoaded', () => {
             const email = emailRegister.value.trim();
             const password = passwordRegister.value.trim();
 
-            if (firstName === '' || lastName === '' || age === '' || adresse === '' || tel === '' || email === '' || password === '') {
+            if ([firstName, lastName, age, adresse, tel, email, password].some(field => field === '')) {
                 alert('Veuillez remplir tous les champs');
                 return;
             }
 
-            // Vérifie si l'utilisateur est déjà inscrit
-            const exists = accounts.some(account => account.email === email);
-            if (exists) {
-                alert('Cet email est déjà inscrit. Veuillez utiliser un autre email.');
-            } else {
-                // Ajoute l'utilisateur
-                accounts.push({ firstName, lastName, age, adresse, tel, email, password });
-                localStorage.setItem('accounts', JSON.stringify(accounts)); // Sauvegarde dans localStorage
-                alert('Inscription réussie');
-                firstNameRegister.value = '';
-                lastNameRegister.value = '';
-                ageRegister.value = '';
-                adresseRegister.value = '';
-                telRegister.value = '';
-                emailRegister.value = '';
-                passwordRegister.value = '';
+            if (accounts.some(account => account.email === email)) {
+                alert('Cet email est déjà inscrit.');
+                return;
             }
+
+            accounts.push({ firstName, lastName, age, adresse, tel, email, password });
+            localStorage.setItem('accounts', JSON.stringify(accounts));
+            alert('Inscription réussie !');
         });
     }
 
-    // Gérer la connexion
+    // Connexion
     if (submitConnect) {
         submitConnect.addEventListener('click', (event) => {
-            event.preventDefault(); // Empêcher le formulaire de se soumettre automatiquement
+            event.preventDefault();
 
             const email = emailLogin.value.trim();
             const password = passwordLogin.value.trim();
 
-            if (email === '' || password === '') {
+            if ([email, password].some(field => field === '')) {
                 alert('Veuillez remplir tous les champs');
                 return;
             }
 
-            // Recherche de l'utilisateur
             const user = accounts.find(account => account.email === email);
+            if (!user) {
+                alert('Utilisateur non trouvé.');
+                return;
+            }
 
-            if (user) {
-                if (user.password === password) {
-                    alert('Connexion réussie');
-                    // Redirection ou autre action
-                    window.location.href = 'index.html';
-                } else {
-                    alert('Mot de passe incorrect');
-                }
+            if (user.password === password) {
+                alert('Connexion réussie !');
+                localStorage.setItem('currentUser', JSON.stringify(user));
+                window.location.href = 'index.html';
             } else {
-                alert('Utilisateur non trouvé. Veuillez vous inscrire.');
+                alert('Mot de passe incorrect.');
             }
         });
     }
