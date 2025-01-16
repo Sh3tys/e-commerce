@@ -113,6 +113,20 @@ main h1 {
     cursor: pointer;
 }
 
+.detail {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
 .product-item .add-to-cart:hover {
+    background-color: #218838;
+}
+
+.detail:hover {
     background-color: #218838;
 }
