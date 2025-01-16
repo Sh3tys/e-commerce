@@ -28,20 +28,17 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  const addToCartButton = document.getElementById("add-to-cart"); // Bouton Ajouter au panier
+  const addToCartButton = document.getElementById("add-to-cart");
 
-  // Ajout du produit au panier
   addToCartButton.addEventListener("click", () => {
-    // Récupérer les informations du produit
     const productName = document.querySelector(
       ".product-details h2"
     ).textContent;
     const productPriceText = document.querySelector(
       ".product-details .price"
-    ).textContent; // Exemple : "€499.99"
+    ).textContent;
     const productImage = document.querySelector(".product-image img").src;
-
-    // Extraire correctement le prix en tant que nombre
+    //supp les infos inutile pour just avoir le float et calculer facilement le total
     const productPrice = parseFloat(
       productPriceText.replace(/[^0-9.,]/g, "").replace(",", ".")
     );
@@ -53,17 +50,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const product = {
       name: productName,
-      price: productPrice, // Prix correctement formaté
+      price: productPrice,
       image: productImage,
     };
 
-    // Récupérer les articles existants dans le panier
+    // recupe des achats deja fait
     const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
-
-    // Ajouter le produit au panier
     cartItems.push(product);
 
-    // Mettre à jour le localStorage avec les nouveaux articles
+    //update du localSto
     localStorage.setItem("cart", JSON.stringify(cartItems));
 
     alert(`${productName} a été ajouté au panier.`);

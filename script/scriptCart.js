@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const catalog = document.getElementById("catalog");
   const listProduct = document.getElementById("listProduct");
   const login = document.getElementById("login");
-  const addToCartButtons = document.querySelectorAll(".add-to-cart");
 
   if (accueil) {
     accueil.addEventListener("click", () => {
@@ -31,18 +30,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const cartContainer = document.querySelector(".cart-container");
   const clearCartButton = document.getElementById("clear-cart");
-  const buy = document.querySelector(".btn-buy");
-
-  if (buy) {
-    buy.addEventListener("click", () => {
-      alert("Votre compte a été débité avec succés ! ");
-      localStorage.removeItem("cart");
-      cartItems.length = 0;
-      updateCartDisplay();
-    });
-  }
+  const buy = document.getElementById("btn-buy");
 
   const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+
+  const calculateTotal = () => {
+    return cartItems.reduce((sum, item) => sum + item.price, 0);
+  };
 
   const updateCartDisplay = () => {
     cartContainer.innerHTML = "";
@@ -52,11 +46,9 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    let total = 0;
+    let total = calculateTotal();
 
     cartItems.forEach((item, index) => {
-      total += item.price;
-
       const productElement = document.createElement("div");
       productElement.classList.add("cart-item");
       productElement.innerHTML = `
@@ -94,6 +86,24 @@ document.addEventListener("DOMContentLoaded", () => {
     cartItems.length = 0;
     updateCartDisplay();
   });
+
+  if (buy) {
+    buy.addEventListener("click", () => {
+      const total = calculateTotal();
+      if (total > 0) {
+        alert(
+          `Votre compte a été débité de ${total.toFixed(2)} € avec succès !`
+        );
+        localStorage.removeItem("cart");
+        cartItems.length = 0;
+        updateCartDisplay();
+      } else {
+        alert(
+          "Votre panier est vide. Ajoutez des articles avant de finaliser l'achat."
+        );
+      }
+    });
+  }
 
   updateCartDisplay();
 });

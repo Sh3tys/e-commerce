@@ -38,7 +38,6 @@ document.addEventListener("DOMContentLoaded", () => {
     cart.addEventListener("click", () => (window.location.href = "cart.html"));
 
   let accounts = JSON.parse(localStorage.getItem("accounts")) || [];
-  let currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
   loginTab.addEventListener("click", () => {
     loginTab.classList.add("active");
