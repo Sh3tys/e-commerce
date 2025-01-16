@@ -39,4 +39,15 @@ document.addEventListener("DOMContentLoaded", () => {
         element.onclick = () => window.location.href = "catalog.html";
     });
   }
+
+
+  const closePopupButton = document.getElementById('close-popup');
+
+// Fonction pour fermer la popup
+closePopupButton.addEventListener('click', function() {
+  popup.style.display = 'none';
+});
+
+
+
 });
