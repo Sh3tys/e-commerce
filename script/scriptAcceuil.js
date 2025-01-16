@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const teasing = document.getElementById("pictureTeasing");
   const promos = document.querySelectorAll(".promo-item");
-  const category = document.querySelectorAll('.category');
+  const category = document.querySelectorAll(".category");
 
   if (teasing) {
     teasing.addEventListener("click", function () {
@@ -31,23 +31,18 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   if (promos) {
     promos.forEach((element) => {
-        element.onclick = () => window.location.href = "catalog.html";
+      element.onclick = () => (window.location.href = "catalog.html");
     });
   }
   if (category) {
     category.forEach((element) => {
-        element.onclick = () => window.location.href = "catalog.html";
+      element.onclick = () => (window.location.href = "catalog.html");
     });
   }
 
+  const acceptPopupButton = document.getElementById("accept");
 
-  const closePopupButton = document.getElementById('close-popup');
-
-// Fonction pour fermer la popup
-closePopupButton.addEventListener('click', function() {
-  popup.style.display = 'none';
-});
-
-
-
+  acceptPopupButton.addEventListener("click", function () {
+    popup.style.display = "none";
+  });
 });
