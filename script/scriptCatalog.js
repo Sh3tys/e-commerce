@@ -80,4 +80,11 @@ document.addEventListener("DOMContentLoaded", () => {
     phoneCatalog.style.display = "block";
     accessoryCatalog.style.display = "block";
   });
+
+  const otherList = document.querySelectorAll('.list-btn');
+  otherList.forEach(item => {
+    item.addEventListener('click', () => {
+      alert("Cette page n'existe pas");
+    });
+  });
 });

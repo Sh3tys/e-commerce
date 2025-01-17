@@ -94,6 +94,38 @@ main h1 {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+.product-details {
+  text-align: right;
+}
+
+.product-details h2,
+.product-details p,
+.product-details button {
+  display: block;
+  margin: 0;
+}
+
+.product-details .remove-item {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  text-align: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.product-details .remove-item:hover {
+  background-color: #e60000;
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.product-details .remove-item:active {
+  transform: scale(0.95);
+}
+
 .cart-item {
   display: flex;
   align-items: center;

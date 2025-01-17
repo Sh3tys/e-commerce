@@ -119,12 +119,13 @@ header nav ul li button:hover {
   height: auto;
 }
 
+.list,
 #btn-list {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
+.list-btn,
 #btn-list button {
   color: white;
   background-color: green;
@@ -137,10 +138,12 @@ header nav ul li button:hover {
   cursor: pointer;
 }
 
+.list-btn:hover,
 #btn-list button:hover {
   background-color: darkgreen;
 }
 
+.list-btn:active,
 #btn-list button:active {
   transform: scale(0.95);
 }
