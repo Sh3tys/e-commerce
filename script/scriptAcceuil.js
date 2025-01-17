@@ -40,9 +40,19 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  const acceptPopupButton = document.getElementById("accept");
 
-  acceptPopupButton.addEventListener("click", function () {
-    popup.style.display = "none";
-  });
+const popup = document.getElementById("popup");
+const acceptPopupButton = document.getElementById("accept");
+
+if (localStorage.getItem("conditionsAccepted") === "true") {
+  popup.style.display = "none";
+} else {
+  popup.style.display = "flex";
+}
+
+acceptPopupButton.addEventListener("click", function () {
+  popup.style.display = "none";
+  localStorage.setItem("conditionsAccepted", "true");
+});
+
 });
