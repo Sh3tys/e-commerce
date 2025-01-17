@@ -18,6 +18,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const telRegister = document.getElementById("telRegister");
   const emailRegister = document.getElementById("emailRegister");
   const passwordRegister = document.getElementById("passwordRegister");
+  const confirmPasswordRegister = document.getElementById("confirmPasswordRegister");
+  const a2f = document.getElementById("a2f-check");
+  const condition = document.getElementById("condition-check");
 
   if (accueil)
     accueil.addEventListener(
@@ -65,6 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const tel = telRegister.value.trim();
       const email = emailRegister.value.trim();
       const password = passwordRegister.value.trim();
+      const confirmPassword = confirmPasswordRegister.value.trim();
 
       if (
         [firstName, lastName, age, adresse, tel, email, password].some(
@@ -77,6 +81,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (accounts.some((account) => account.email === email)) {
         alert("Cet email est déjà inscrit.");
+        return;
+      }
+
+      if (password!== confirmPassword) {
+        alert("Les mots de passe ne correspondent pas.");
+        return;
+      }
+
+      if (!a2f.checked) {
+        alert("Veuillez comfirmez que vous n'êtes pas un robot.");
+        return;
+      }
+
+      if (!condition.checked) {
+        alert("Veuillez accepter les conditions d'utilisation.");
         return;
       }
 

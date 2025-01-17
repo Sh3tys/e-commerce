@@ -177,6 +177,15 @@ form button:active {
   background-color: #004494;
 }
 
+#emailRegister {
+  margin-top: 20px;
+}
+
+#condition-check #a2f-check {
+  border-radius: 5px;
+  
+}
+
 /* Responsive Design */
 @media (max-width: 500px) {
   .account-container {
