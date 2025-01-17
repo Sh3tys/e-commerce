@@ -137,6 +137,13 @@ header nav ul li button:hover {
   cursor: pointer;
 }
 
+#btn-list button:hover {
+  background-color: darkgreen;
+}
+
+#btn-list button:active {
+  transform: scale(0.95);
+}
 /* ======================= FOOTER ======================= */
 
 footer {

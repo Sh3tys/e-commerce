@@ -138,8 +138,16 @@ main h1 {
   background-color: #218838;
 }
 
+.product-item .add-to-cart:active {
+  transform: scale(0.95);
+}
+
 .detail:hover {
   background-color: #218838;
+}
+
+.product-item .detail:active {
+  transform: scale(0.95);
 }
 
 /* ======================= FOOTER ======================= */

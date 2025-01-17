@@ -60,7 +60,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
     //update du localSto
     localStorage.setItem("cart", JSON.stringify(cartItems));
-
-    alert(`${productName} a été ajouté au panier.`);
   });
 });

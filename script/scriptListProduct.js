@@ -61,8 +61,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
       cartItems.push(product);
       localStorage.setItem("cart", JSON.stringify(cartItems));
-
-      alert(`${productName} a été ajouté au panier.`);
     });
   });
 });

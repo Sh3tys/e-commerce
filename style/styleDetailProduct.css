@@ -145,6 +145,10 @@ header nav ul li button:hover {
   background-color: #0056b3;
 }
 
+.cta-buttons #add-to-cart:active {
+  transform: scale(0.95);
+}
+
 /* Product info section */
 .product-info {
   max-width: 800px;
